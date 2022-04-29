@@ -8,6 +8,12 @@ https://javascript.plainenglish.io/graphql-nodejs-mongodb-made-easy-with-nestjs-
 
 Playground: http://localhost:3000/graphql
 
+Next steps:
+Setup Album service
+Setup MongoDB integration
+Setup integration with external API
+Link to React app
+
 ## Installation
 
 ```bash
