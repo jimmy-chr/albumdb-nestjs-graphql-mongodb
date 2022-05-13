@@ -3,34 +3,66 @@
 # ------------------------------------------------------
 
 type Album {
+  _id: String!
+
   """
-  Example field (placeholder)
+  Album title
   """
-  exampleField: Int!
+  title: String!
+
+  """
+  Album artist
+  """
+  artist: String!
+
+  """
+  Album release year
+  """
+  year: Int!
 }
 
 type Query {
   albums: [Album!]!
-  album(id: Int!): Album!
+  album(_id: String!): Album!
 }
 
 type Mutation {
   createAlbum(createAlbumInput: CreateAlbumInput!): Album!
   updateAlbum(updateAlbumInput: UpdateAlbumInput!): Album!
-  removeAlbum(id: Int!): Album!
+  removeAlbum(_id: String!): Album!
 }
 
 input CreateAlbumInput {
   """
-  Example field (placeholder)
+  album title
   """
-  exampleField: Int!
+  title: String!
+
+  """
+  album artist
+  """
+  artist: String!
+
+  """
+  release year
+  """
+  year: Int!
 }
 
 input UpdateAlbumInput {
   """
-  Example field (placeholder)
+  album title
   """
-  exampleField: Int
-  id: Int!
+  title: String
+
+  """
+  album artist
+  """
+  artist: String
+
+  """
+  release year
+  """
+  year: Int
+  _id: String!
 }

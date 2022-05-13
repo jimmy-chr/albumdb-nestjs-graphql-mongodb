@@ -1,18 +1,43 @@
 ## Description
 
-Album database using NestJS and GraphQL in the first version, I'll try to add MongoDB later on
+Album database using NestJS, GrapQL and MongoDB
 
 Tutorials followed:
-https://javascript.plainenglish.io/graphql-backend-in-nodejs-made-easy-with-nestjs-1489be18b994
-https://javascript.plainenglish.io/graphql-nodejs-mongodb-made-easy-with-nestjs-and-mongoose-29f9c0ea7e1d
+
+- https://javascript.plainenglish.io/graphql-backend-in-nodejs-made-easy-with-nestjs-1489be18b994
+- https://javascript.plainenglish.io/graphql-nodejs-mongodb-made-easy-with-nestjs-and-mongoose-29f9c0ea7e1d
 
 Playground: http://localhost:3000/graphql
+Starting the mongoDB: make sure your Docker desktop is running and run 'docker compuse up -d'
 
 Next steps:
-Setup Album service
-Setup MongoDB integration
+Pagination from tutorial
 Setup integration with external API
 Link to React app
+
+```
+mutation{
+  createAlbum(createAlbumInput:{
+		title: "Under a funeral moon"
+    artist: "Darkthrone"
+    year: 1993
+  }){
+    _id
+    title
+    artist
+    year
+  }
+}
+
+query{
+  albums{
+    _id
+    title
+    artist
+    year
+  }
+}
+```
 
 ## Installation
 
