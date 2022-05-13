@@ -1,27 +1,47 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateAlbumInput } from './dto/create-album.input';
 import { UpdateAlbumInput } from './dto/update-album.input';
 import { Album } from './entities/album.entity';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class AlbumsService {
-  create(createAlbumInput: CreateAlbumInput): Album {
-    return { exampleField: createAlbumInput.exampleField };
+  constructor(
+    @InjectModel(Album.name)
+    private readonly albumModel: Model<Album>,
+  ) {}
+
+  create(createAlbumInput: CreateAlbumInput) {
+    const album = new this.albumModel(createAlbumInput);
+    return album.save();
   }
 
-  findAll(): [Album] {
-    return [{ exampleField: 1 }];
+  findAll() {
+    return this.albumModel.find().exec();
   }
 
-  findOne(id: number): Album {
-    return { exampleField: id };
+  async findOne(id: string) {
+    const album = await this.albumModel.findOne({ _id: id }).exec();
+    if (!album) {
+      throw new NotFoundException(`Album ${id} not found`);
+    }
+    return album;
   }
 
-  update(id: number, updateAlbumInput: UpdateAlbumInput): Album {
-    return { exampleField: updateAlbumInput.id };
+  async update(id: string, updateAlbumInput: UpdateAlbumInput) {
+    const existingAlbum = await this.albumModel
+      .findOneAndUpdate({ _id: id }, { $set: updateAlbumInput }, { new: true })
+      .exec();
+
+    if (!existingAlbum) {
+      throw new NotFoundException(`Album ${id} not found`);
+    }
+    return existingAlbum;
   }
 
-  remove(id: number): Album {
-    return { exampleField: id };
+  async remove(id: string) {
+    const album = await this.findOne(id);
+    return album.remove();
   }
 }
