@@ -5,25 +5,27 @@
 type Album {
   _id: String!
 
-  """
-  Album title
-  """
+  """Album title """
   title: String!
 
-  """
-  Album artist
-  """
+  """Album artist """
   artist: String!
 
-  """
-  Album release year
-  """
+  """Album release year """
   year: Int!
 }
 
 type Query {
-  albums: [Album!]!
+  albums(listAlbumsInput: ListAlbumsInput!): [Album!]!
   album(_id: String!): Album!
+}
+
+input ListAlbumsInput {
+  """classical limit"""
+  limit: Float!
+
+  """classical offset"""
+  offset: Float!
 }
 
 type Mutation {
@@ -33,36 +35,24 @@ type Mutation {
 }
 
 input CreateAlbumInput {
-  """
-  album title
-  """
+  """album title"""
   title: String!
 
-  """
-  album artist
-  """
+  """album artist"""
   artist: String!
 
-  """
-  release year
-  """
+  """release year"""
   year: Int!
 }
 
 input UpdateAlbumInput {
-  """
-  album title
-  """
+  """album title"""
   title: String
 
-  """
-  album artist
-  """
+  """album artist"""
   artist: String
 
-  """
-  release year
-  """
+  """release year"""
   year: Int
   _id: String!
 }

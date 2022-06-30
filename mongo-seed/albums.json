@@ -1,0 +1,102 @@
+  {
+    "_id": { "$oid": "62bd5f063de56b6cd7c64b88" },
+    "title": "Under a funeral moon",
+    "artist": "Darkthrone",
+    "year": 1993
+  }
+  {
+    "_id": { "$oid": "62bd64553de56b6cd7c64b8b" },
+    "title": "Hvis Lysett Tar Oss",
+    "artist": "Burzum",
+    "year": 1994
+  }
+  {
+    "_id": { "$oid": "62bd647f3de56b6cd7c64b8d" },
+    "title": "Vehemence",
+    "artist": "Ande",
+    "year": 2022
+  }
+  {
+    "_id": { "$oid": "62bd64a43de56b6cd7c64b8f" },
+    "title": "Zink",
+    "artist": "Dans Dans",
+    "year": 2021
+  }
+  {
+    "_id": { "$oid": "62bd64d93de56b6cd7c64b91" },
+    "title": "Nevermind",
+    "artist": "Nirvana",
+    "year": 1991
+  }
+  {
+    "_id": { "$oid": "62bd64f33de56b6cd7c64b93" },
+    "title": "Doolittle",
+    "artist": "Pixies",
+    "year": 1989
+  }
+  {
+    "_id": { "$oid": "62bd65223de56b6cd7c64b95" },
+    "title": "Solar Lovers",
+    "artist": "Celestial Season",
+    "year": 1995
+  }
+  {
+    "_id": { "$oid": "62bd656a3de56b6cd7c64b97" },
+    "title": "Slow, Deep and Hard",
+    "artist": "Type O Negative",
+    "year": 1991
+  }
+  {
+    "_id": { "$oid": "62bd658f3de56b6cd7c64b99" },
+    "title": "Payin' The Dues",
+    "artist": "The Hellacopters",
+    "year": 1997
+  }
+  {
+    "_id": { "$oid": "62bd65a63de56b6cd7c64b9b" },
+    "title": "Serenades",
+    "artist": "Anathema",
+    "year": 1993
+  }
+  {
+    "_id": { "$oid": "62bd65ee3de56b6cd7c64b9d" },
+    "title": "Emanations Of Desolation",
+    "artist": "Sun Worship",
+    "year": 2019
+  }
+  {
+    "_id": { "$oid": "62bd66113de56b6cd7c64b9f" },
+    "title": "Legion",
+    "artist": "Deicide",
+    "year": 1992
+  }
+  {
+    "_id": { "$oid": "62bd662c3de56b6cd7c64ba1" },
+    "title": "Tomb Of The Mutilated",
+    "artist": "Cannibal Corpse",
+    "year": 1992
+  }
+  {
+    "_id": { "$oid": "62bd66453de56b6cd7c64ba3" },
+    "title": "Arise",
+    "artist": "Sepultura",
+    "year": 1991
+  }
+  {
+    "_id": { "$oid": "62bd66763de56b6cd7c64ba5" },
+    "title": "Gegrepen Door De Geest Der Zielsontluiking",
+    "artist": "Fluisteraars",
+    "year": 2021
+  }
+  {
+    "_id": { "$oid": "62bd66993de56b6cd7c64ba7" },
+    "title": "Thy Mighty Contract",
+    "artist": "Rotting Christ",
+    "year": 1993
+  }
+  {
+    "_id": { "$oid": "62bd66db3de56b6cd7c64ba9" },
+    "title": "Blood Ritual",
+    "artist": "Samael",
+    "year": 1992
+  }

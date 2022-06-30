@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateAlbumInput } from './dto/create-album.input';
 import { UpdateAlbumInput } from './dto/update-album.input';
+import { ListAlbumsInput } from './dto/list-albums.input';
 import { Album } from './entities/album.entity';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -17,8 +18,9 @@ export class AlbumsService {
     return album.save();
   }
 
-  findAll() {
-    return this.albumModel.find().exec();
+  findAll(paginationQuery: ListAlbumsInput) {
+    const { limit, offset } = paginationQuery;
+    return this.albumModel.find().skip(offset).limit(limit).exec();
   }
 
   async findOne(id: string) {

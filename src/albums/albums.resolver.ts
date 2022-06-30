@@ -1,8 +1,9 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { AlbumsService } from './albums.service';
 import { Album } from './entities/album.entity';
 import { CreateAlbumInput } from './dto/create-album.input';
 import { UpdateAlbumInput } from './dto/update-album.input';
+import { ListAlbumsInput } from './dto/list-albums.input';
 
 @Resolver(() => Album)
 export class AlbumsResolver {
@@ -14,8 +15,8 @@ export class AlbumsResolver {
   }
 
   @Query(() => [Album], { name: 'albums' })
-  findAll() {
-    return this.albumsService.findAll();
+  findAll(@Args('listAlbumsInput') listAlbumsInput: ListAlbumsInput) {
+    return this.albumsService.findAll(listAlbumsInput);
   }
 
   @Query(() => Album, { name: 'album' })

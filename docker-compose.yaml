@@ -1,9 +1,19 @@
 version: '3'
 services:
-  mongo:
+  mongodb:
     image: mongo
+    container_name: mongodb
     restart: unless-stopped
     ports:
       - '27017:27017'
     volumes:
-      - .docker-data/mongo:/data/medium-db
+      - ./mongo-seed:/mongo-seed
+
+  mongo_seed:
+    image: mongo
+    container_name: mongo_seed
+    links:
+      - mongodb
+    volumes:
+      - ./mongo-seed:/mongo-seed
+    command: mongoimport --db album-db --collection albums --file /mongo-seed/albums.json
